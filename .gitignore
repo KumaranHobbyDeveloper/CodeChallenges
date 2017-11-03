@@ -25,6 +25,7 @@ $obj/Debug/
 /**/Debug/*
 # Windows shortcuts
 *.lnk
+/**/.vs/*
 
 # =========================
 # Operating System Files
@@ -54,3 +55,4 @@ $obj/Debug/
 Network Trash Folder
 Temporary Items
 .apdisk
+.vs
