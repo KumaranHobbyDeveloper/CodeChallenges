@@ -12,6 +12,7 @@ $bin/
 $bin/Debug/
 $obj/Debug/
 
+
 # Windows Installer files
 *.cab
 *.msi
@@ -23,6 +24,7 @@ $obj/Debug/
 /**/obj/*
 /**/obj/Debug/*
 /**/Debug/*
+/**/.vs/*
 # Windows shortcuts
 *.lnk
 /**/.vs/*

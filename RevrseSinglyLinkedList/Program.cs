@@ -28,23 +28,29 @@ namespace RevrseSinglyLinkedList
                 }
             };
             Node reversedNode = null;
-            reversedNode = ReverseRecursive(currentNode,ref reversedNode);
-
+            ReverseRecursive(currentNode,ref reversedNode);
+            Console.Read();
         }
 
-        public static Node ReverseRecursive(Node oldNode,ref Node newNode)
+        public static void ReverseRecursive(Node oldNode,ref Node reverseNode)
         {
+            Node current = null;
             if (oldNode.Next != null)
-                ReverseRecursive(oldNode.Next,ref newNode);
+            {
+                ReverseRecursive(oldNode.Next,ref current);
+            }
+            Node newNode = new Node { Value = oldNode.Value, Next = null };
+            if (current == null)
+            {
+                current = newNode;
+                reverseNode = current;
+            }
             else
             {
-                if (newNode == null)
-                    newNode = oldNode;
-                else
-                    newNode.Next = oldNode;
-                oldNode = null;
+                current.Next = newNode;
+                reverseNode = current.Next;
             }
-            return newNode;
+            //Console.WriteLine(reverseNode.Value);
         }
     }
 
@@ -52,5 +58,6 @@ namespace RevrseSinglyLinkedList
     {
         public string Value;
         public Node Next = null;
+        
     }
 }
