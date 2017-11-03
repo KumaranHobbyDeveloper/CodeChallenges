@@ -29,12 +29,6 @@ namespace RevrseSinglyLinkedList
             };
             Node reversedNode = null;
             ReverseRecursive(currentNode,ref reversedNode);
-            while (reversedNode.Next != null)
-            {
-                Console.WriteLine(reversedNode.Value);
-                reversedNode = reversedNode.Next;
-            }
-
             Console.Read();
         }
 
