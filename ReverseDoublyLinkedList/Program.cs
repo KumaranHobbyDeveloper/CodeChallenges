@@ -34,16 +34,16 @@ namespace ReverseDoublyLinkedList
             Node newOrderNodeToptoBottom = null;
             Node newOrderNodeBottomtoUp = null;
 
-            newOrderNodeToptoBottom = ReverseRecursiveTopToBottom(IstNode);
+            ReverseRecursiveTopToBottom(IstNode, ref newOrderNodeToptoBottom);
             ReverseRecursiveBottomToUp(IstNode, ref newOrderNodeBottomtoUp);
 
         }
 
-        public static Node ReverseRecursiveTopToBottom(Node OldNode, Node NewNode = null)
+        public static void ReverseRecursiveTopToBottom(Node OldNode, ref Node NewNode)
         {
             Node currentNode = null;
 
-            if (OldNode == null) return null;
+            if (OldNode == null) return;
 
             if (OldNode.Previous == null)
             {
@@ -65,8 +65,7 @@ namespace ReverseDoublyLinkedList
                 currentNode.Next = NewNode;
             }
             if (OldNode.Next != null)
-            { ReverseRecursiveTopToBottom(OldNode.Next, currentNode); }
-            return currentNode;
+            { ReverseRecursiveTopToBottom(OldNode.Next, ref currentNode); }
         }
 
         public static void ReverseRecursiveBottomToUp(Node OldNode,ref Node NewNode)
